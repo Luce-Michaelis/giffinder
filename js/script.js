@@ -3,12 +3,13 @@
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
 
 $(document).ready(function() {
-    
-    $("input").keyup(function(event){
-    if (event.keyCode === 13){
-      $("#search").click();
-    }
-  });
+
+    $("input").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#search").click();
+        }
+    });
+
     function giphyURLWithSearchTerm(searchTerm) {
 
         var url = "https://api.giphy.com/v1/stickers/search?q=" + searchTerm + "&api_key=dc6zaTOxFJmzC";
@@ -21,7 +22,7 @@ $(document).ready(function() {
     }
 
     function callGiphyAPIWithSearchTerm(searchTerm) {
-        var i = Math.floor(Math.random() *(10+1));
+        var i = Math.floor(Math.random() * (10 + 1));
         $.ajax({
             url: "https://api.giphy.com/v1/stickers/search?q=" + searchTerm + "&api_key=dc6zaTOxFJmzC",
             method: "GET",
