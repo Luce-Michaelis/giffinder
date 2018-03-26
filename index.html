@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-      <title>
-        Giffinder
-      </title>
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="js/script.js" async></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <link type="text/css" rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+<head>
+  <link rel="icon" href="https://i.pinimg.com/736x/a3/02/a5/a302a5f7a0e9911b0c083cd10d865221--christmas-t-shirt-the-nightmare-before-christmas.jpg">
+  <title>
+    Giffinder
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/script.js" async></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+</head>
 
-      <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <div class="container">
-              <div class="navbar-header">
-                  <a class="navbar-brand" href="#">Giffinder</a>
-              </div>
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <div class="col-sm-3 col-md-3 pull-right">
-                      <div class="navbar-form" role="search">
-                        <div class="input-group">
-                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                          <div class="input-group-btn">
-                              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <!-- /.navbar-collapse -->
-          </div>
-          <!-- /.container -->
-      </nav>
+<body>
 
-      <!-- Page Content -->
-      <section>
-        <div class="container"> 
-            <div class="row gallery">
-                  <h3 class="text-center">  Search for a Gif above <br> Your results will display here</h3>
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Giffinder</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="col-sm-3 col-md-3 pull-right">
+          <div class="navbar-form" role="search">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" id="search"><span class="glyphicon glyphicon-search"></span></button>
+              </div>
             </div>
-        </div> 
-      <section>
-      <!-- Footer -->
-      <footer>
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12">
-                      <p>Copyright &copy; Your Website 2017</p>
-                  </div>
-              </div>
+            <button class="btn btn-default" id="clear">Clear</button>
+            <button class="btn btn-default" id="random">Random Selection</button>
           </div>
-      </footer>   
+        </div>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
 
-  </body>
+  <!-- Page Content -->
+  <section>
+    <div class="row">
+      <div class="col-xs-6" id="images">
+        <h3 class="text-center"> Search for a Gif above </h3>
+      </div>
+      <div class="col-xs-6" id="random-images">
+        <h3 class="text-center"> Random Gif </h3>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Jennifer Zheng & Lucero L</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
 
 </html>

@@ -2,35 +2,78 @@
 //******************TEST EARLY AND OFTEN USING console.log() ******************
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
 
-$(document).ready(function(){
-  function giphyURLWithSearchTerm(searchTerm) {
-  
+$(document).ready(function() {
     
-    // write a function that will return a url for the giphy API with
-    // the searchTerm provided in the parameters
-}
+    $("input").keyup(function(event){
+    if (event.keyCode === 13){
+      $("#search").click();
+    }
+  });
+    function giphyURLWithSearchTerm(searchTerm) {
 
-function appendImageToBody(srcURL) {
-    $("body").append('<img src="https://giphy.com/stickers/namslam-dogdings-3og0IJHMqlmPzy7sGs">');
- 
-}
+        var url = "https://api.giphy.com/v1/stickers/search?q=" + searchTerm + "&api_key=dc6zaTOxFJmzC";
+        return url;
 
-function callGiphyAPIWithSearchTerm(searchTerm) {
-    $.ajax({
-      url: "https://api.giphy.com/v1/stickers/search?q=dog&api_key=dc6zaTOxFJmzC",
-      method: "GET",
-      success: function(response) {
-          console.log(response);
-         console.log(response.data[4]);
-         var first = response.data[4] ;
-         console.log(first.type);
-           console.log(first.title);
-        
-      },
-    }); 
-}
-callGiphyAPIWithSearchTerm("dog");
-  
-  
-  
+    }
+
+    function appendImageToBody(srcURL) {
+        $('#images').append('<img src=' + srcURL + '>');
+    }
+
+    function callGiphyAPIWithSearchTerm(searchTerm) {
+        var i = Math.floor(Math.random() *(10+1));
+        $.ajax({
+            url: "https://api.giphy.com/v1/stickers/search?q=" + searchTerm + "&api_key=dc6zaTOxFJmzC",
+            method: "GET",
+            success: function(response) {
+                var url = response.data[i].images.original.url;
+                appendImageToBody(url);
+            },
+        });
+    }
+
+    $("#search").click(function() {
+        var searchTerm = $("input").val();
+        $("#images").append(callGiphyAPIWithSearchTerm(searchTerm));
+    });
+
+    $('#clear').click(function() {
+        clearList();
+
+    });
+
+    function clearList() {
+        $("#images").empty();
+        $("#random-images").empty();
+
+    }
+
+    function randomGiphyURL() {
+
+        var gifUrl = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC";
+        return gifUrl;
+
+    }
+
+    function randomAppendImageToBody(srcURL) {
+
+        $('#random-images').append('<img src=' + srcURL + '>');
+    }
+
+    function callRandomGiphyAPI() {
+        $.ajax({
+            url: randomGiphyURL(),
+            method: "GET",
+            success: function(response) {
+                console.log(response);
+                var url = response.data.images.original.url;
+                randomAppendImageToBody(url);
+            },
+        });
+    }
+
+
+    $('#random').click(function() {
+        $("#random-images").html(callRandomGiphyAPI);
+    })
 });
